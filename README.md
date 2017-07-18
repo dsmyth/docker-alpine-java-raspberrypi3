@@ -1,4 +1,4 @@
-# docker-alpine-java-rpi
+# docker-alpine-java-raspberrypi3
 Docker image using alpine linux supporting Oracle Java JRE 8
 
 Built for use with resin.io -- I found that the OpenJDK versions were way too slow.
