@@ -1,7 +1,7 @@
 # AlpineLinux for the raspberry pi 3, with glibc-2.23 and Oracle Java 8
 # Based on https://github.com/anapsix/docker-alpine-java, for x86_64
 
-FROM resin/raspberrypi3-alpine:3.6
+FROM balenalib/raspberrypi3-alpine:3.6
 
 MAINTAINER Don Smyth <dsmyth@signett.com>
 
