@@ -1,7 +1,7 @@
 # AlpineLinux for the raspberry pi 3, with glibc-2.23 and Oracle Java 8
 # Based on https://github.com/anapsix/docker-alpine-java, for x86_64
 
-FROM balenalib/raspberrypi3-alpine:3.6
+FROM balenalib/raspberrypi3-alpine:3.8
 
 MAINTAINER Don Smyth <dsmyth@signett.com>
 
@@ -20,7 +20,7 @@ ENV JAVA_VERSION_MAJOR=8 \
 # do all in one step
 RUN set -ex && \
     apk upgrade --update && \
-    apk add --update libstdc++ curl ca-certificates bash && \
+    apk add --update libstdc++ curl ca-certificates bash gzip && \
     for pkg in glibc-${GLIBC_VERSION} glibc-bin-${GLIBC_VERSION} glibc-i18n-${GLIBC_VERSION}; do curl -sSL https://github.com/armhf-docker-library/alpine-pkg-glibc/releases/download/${GLIBC_VERSION_MAJOR}/${pkg}.apk -o /tmp/${pkg}.apk; done && \
     apk add --allow-untrusted /tmp/*.apk && \
     rm -v /tmp/*.apk && \
